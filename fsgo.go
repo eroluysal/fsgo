@@ -4,6 +4,8 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+
+	"github.com/fsnotify/fsnotify"
 )
 
 func fNameAndExt(filename string) (name, ext string) {
@@ -15,9 +17,8 @@ func fNameAndExt(filename string) (name, ext string) {
 func uniqueFInPath(name, path string) (fName string) {
 	f, ext := fNameAndExt(name)
 	for i := 0; ; i++ {
+		// If attempt is greater than 0 then append attempt count value to file name.
 		if i > 0 {
-			// If attempt is greater than 0 then append to attempt count to
-			// file end.
 			name = f + "-" + strconv.Itoa(i) + ext
 		}
 		// Check file validity. If file already does not exists then return the
