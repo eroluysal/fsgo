@@ -4,8 +4,6 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
-
-	"github.com/fsnotify/fsnotify"
 )
 
 func fNameAndExt(filename string) (name, ext string) {
