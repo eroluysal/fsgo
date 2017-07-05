@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func fNameAndExt(filename string) (name string, ext string) {
+func fNameAndExt(filename string) (name, ext string) {
 	e := filepath.Ext(filename)
 	n := filename[0 : len(filename)-len(e)]
 	return n, e
