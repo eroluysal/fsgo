@@ -12,7 +12,7 @@ func fNameAndExt(filename string) (name, ext string) {
 	return n, e
 }
 
-func uniqueFInPath(name, path string) (fName string) {
+func uniqueFInPath(name, path string) string {
 	f, ext := fNameAndExt(name)
 	for i := 0; ; i++ {
 		// If attempt is greater than 0 then append attempt count value to file name.
